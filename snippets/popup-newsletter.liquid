@@ -1,0 +1,76 @@
+<span
+  class="
+    remodal newsletter-popup
+    {% if settings.newsletter_bg != nil %}newsletter-image--true
+    {% else %} newsletter-image--false
+    {% endif %}
+    align-{{settings.newsletter_popup_image_align}}
+    {% comment %}
+       {% if settings.display_first_name and settings.display_last_name %}newsletter-both-names--true
+       {% else %}newsletter-both-names--false
+       {% endif %}
+     {% endcomment %}
+  "
+  data-remodal-id="newsletter"
+  data-remodal-options="
+    hashTracking: false
+    {% comment %}
+      {%- if settings.newsletter_popup_close == false -%}, closeOnOutsideClick: false, closeOnEscape: false{%- endif -%}
+    {% endcomment %}
+  "
+>
+	{% if settings.newsletter_popup_close %}
+		<a data-remodal-action="close" class="remodal-close"></a>
+	{% endif %}
+	{% if settings.newsletter_bg != nil %}
+		<div class="newsletter-img">
+			<img src="{{ settings.newsletter_bg | img_url: '600x' }}" alt="{% if settings.newsletter_bg.alt != blank %}{{ settings.newsletter_bg.alt }}{% else %}{{ settings.newsletter_popup_title | escape }}{% endif %}" class="lazyload {{ settings.image_loading_style }}" />
+		</div>
+	{% endif %}
+	<div class="newsletter-info">
+		<div class="newsletter-description">
+
+            {% if settings.newsletter_logo %}
+              <div class="text-align--center">
+                <img  src="{{ settings.newsletter_logo | img_url: '100x' }}"
+                  alt="{{ settings.newsletter_logo.alt | escape }}"
+                  class="footer-logo lazyload {{ settings.image_loading_style }}"
+                  data-sizes="25vw"
+                  {% comment %}style="max-width: {{- section.settings.image.width -}}px"{% endcomment %}
+                  data-src="{{ settings.newsletter_logo | img_url: '2048x' }}"
+                  data-srcset=" {{ settings.newsletter_logo | img_url: '200x' }} 200w,
+                                {{ settings.newsletter_logo | img_url: '300x' }} 300w,
+                                {{ settings.newsletter_logo | img_url: '400x' }} 400w,
+                                {{ settings.newsletter_logo | img_url: '500x' }} 500w,
+                                {{ settings.newsletter_logo | img_url: '600x' }} 600w,
+                                {{ settings.newsletter_logo | img_url: '1000x' }} 1000w"
+               />
+              </div>
+            {% endif %}
+
+			<h2>{{ settings.newsletter_popup_title }}</h2>
+			<div>{{ settings.newsletter_popup_text }}</div>
+
+            {% if settings.newsletter_popup_cta_text != blank %}
+              <h3 class="newsletter-cta-header">{{ settings.newsletter_popup_cta_text }}</h3>
+            {% endif %}
+
+			{% if settings.popup_button1 != blank or settings.popup_button2 != blank %}
+				<div class="newsletter-buttons">
+			    {% if settings.popup_button1 != blank %}
+		        <a {% if settings.popup_button1_link != blank %}href="{{ settings.popup_button1_link }}"{% else %}data-remodal-action="confirm"{% endif %} class="button highlight-{{ settings.popup_button1_highlight }}">
+		          {{ settings.popup_button1 }}
+		        </a>
+		      {% endif %}
+		      {% if settings.popup_button2 != blank %}
+		        <a {% if settings.popup_button2_link != blank %}href="{{ settings.popup_button2_link }}"{% else %}data-remodal-action="confirm"{% endif %} class="button highlight-{{ settings.popup_button2_highlight }}">
+		          {{ settings.popup_button2 }}
+		        </a>
+		      {% endif %}
+		     </div>
+		    {% endif %}
+
+			{% include 'newsletter-form' %}
+		</div>
+	</div>
+</span>

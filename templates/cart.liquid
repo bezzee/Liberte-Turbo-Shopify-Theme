@@ -1,0 +1,27 @@
+{% comment %}
+  The contents of the cart.liquid template can be found in /sections/cart-template.liquid
+{% endcomment %}
+
+{% section 'cart-template' %}
+
+<!-- Global site tag (gtag.js) - AdWords - Event snippet  -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-801237009"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-801237009');
+</script>
+<script>
+gtag('event', 'page_view', {
+'send_to': 'AW-801237009',
+	'ecomm_pagetype': 'cart',
+	{% if cart.item_count > 1 %}
+	'ecomm_prodid': [{% for item in cart.items %}'shopify_US_{{ item.product_id }}_{{ item.variant_id }}',{% endfor %}],
+	{% else %}
+	'ecomm_prodid': [{% for item in cart.items %}'shopify_US_{{ item.product_id }}_{{ item.variant_id }}'{% endfor %}],
+	{% endif %}
+	'ecomm_totalvalue': {{ cart.total_price | money_without_currency | remove:',' }}
+});
+</script>

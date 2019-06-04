@@ -1,0 +1,53 @@
+<div class="container">
+  {% if section.settings.title != blank %}
+    <div class="sixteen columns">
+      <h2 class="title center">{{ section.settings.title | escape }}</h2>
+      <div class="feature_divider"></div>
+    </div>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    <div class="eight columns text-column" {{ block.shopify_attributes }}>
+      {% if block.settings.image != blank %}
+        <p>
+          <img  src="{{ block.settings.image.src | img_url: '300x' }}"
+                class="lazyload {{ settings.image_loading_style }}"
+                alt="{{ block.settings.image.alt }}"
+                data-sizes="auto"
+                data-src="{{ block.settings.image | img_url }}"
+                data-srcset=" {{ block.settings.image | img_url: '2048x' }} 2048w,
+                              {{ block.settings.image | img_url: '1200x' }} 1200w,
+                              {{ block.settings.image | img_url: '1000x' }} 1000w,
+                              {{ block.settings.image | img_url: '800x' }} 800w,
+                              {{ block.settings.image | img_url: '600x' }} 600w,
+                              {{ block.settings.image | img_url: '400x' }} 400w"
+                 />
+         </p>
+        <noscript>
+          <p>
+            {{ block.settings.image | img_url: '480x480', scale: 2 | img_tag: block.settings.image.alt }}
+          </p>
+        </noscript>
+      {% else %}
+        <p>
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </p>
+      {% endif %}
+
+
+      <div class="content-wrapper"> 
+        {% if block.settings.title != blank %}
+          <h3>{{ block.settings.title | escape }}</h3>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div class="rte-setting">{{ block.settings.text }}</div>
+        {% endif %}
+        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+          <a href="{{ block.settings.link }}">
+            {{ block.settings.button_label | escape }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

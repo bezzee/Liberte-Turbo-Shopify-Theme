@@ -1,0 +1,21 @@
+{% assign SUPPORT_DROPDOWN = false %}
+
+{% for link in linklists[menu].links %}
+  <li>
+    <a 
+      href="{{ link.url }}"
+      class="
+        {% if link.active %}active{% endif %}
+       
+        {% if linklists[link.handle] != empty and SUPPORT_DROPDOWN %}dropdown_link
+        {% else %} top_link
+        {% endif %}
+      "
+       
+      {% if SUPPORT_DROPDOWN %} data-dropdown-rel="{{ link.handle }}" {% endif %}
+    >
+      {{ link.title }}
+      {% if linklists[link.handle] != empty and SUPPORT_DROPDOWN %}<span class="icon-down-arrow"></span>{% endif %}
+    </a>
+  </li>
+{% endfor %}

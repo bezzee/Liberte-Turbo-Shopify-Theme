@@ -1,0 +1,185 @@
+<div
+         class="section-content"
+         style="background-color: {{section.settings.background_color }}; color: {{ section.settings.color }}"
+         >
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <div class="sixteen columns">
+        <h2 class="title center">{{ section.settings.title | escape }}</h2>
+        <div class="feature_divider"></div>
+      </div>
+    {% endif %}
+
+    {% for block in section.blocks %}
+    {% if section.blocks.size == 1 %}
+      {%- assign column_width = 'sixteen columns' -%}
+      {% elsif section.blocks.size == 3 %}
+        {%- assign column_width = 'one-third column' -%}
+      {% elsif section.blocks.size == 4 %}
+        {%- assign column_width = 'four columns' -%}
+      {% elsif section.blocks.size == 5 %}
+        {%- assign column_width = 'one-fifth column' -%}
+      {% else %}
+        {%- assign column_width = 'eight columns' -%}
+      {% endif %}
+      <div class="{{ column_width }} text-column" {{ block.shopify_attributes }}>
+        <div class="
+          border-style--{{ block.settings.border_style }}
+          text-align--{{ block.settings.align_text }}">
+          
+          
+          <div class="content-wrapper"> 
+            {% if block.settings.title != blank %}
+              <h3 class="{{ block.settings.heading_size }}">{{ block.settings.title | escape }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="rte-setting">{{ block.settings.text }}</div>
+            {% endif %}
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+              <a
+                 href="{{ block.settings.button_link }}"
+                 {% unless block.settings.button_as_link %}class="action_button continue-button"{% endunless %}
+              >
+                {{ block.settings.button_label | escape }}
+              </a>
+            {% endif %}
+          </div>
+          
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Text columns ",
+    "class": "text-columns-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Text columns"
+      },
+	  {
+		"type": "color",
+		"id": "background_color",
+		"label": "Background Color",
+		"default": "#000"
+	  },
+	  {
+		"type": "color",
+		"id": "color",
+		"label": "Text Color",
+		"default": "#FFF"
+	  }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Column",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Add a title or tagline"
+          },
+          {
+            "type": "select",
+            "id": "heading_size",
+            "label": "Heading size",
+            "options": [
+              {
+                "value": "regular_text",
+                "label": "Regular"
+              },
+              {
+                "value": "large_text",
+                "label": "Large"
+              }
+            ],
+            "default": "regular_text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+          },
+          {
+            "type": "select",
+            "id": "align_text",
+            "label": "Text alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Centered"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          },
+		  {
+			"type": "checkbox",
+			"id": "button_as_link",
+			"label": "Show as link instead of button"
+		  },
+          {
+            "type": "select",
+            "id": "border_style",
+            "label": "Border style",
+            "options": [
+              {
+                "value": "none",
+                "label": "None"
+              },
+              {
+                "value": "box",
+                "label": "Box"
+              },
+              {
+                "value": "quote",
+                "label": "Quote"
+              }
+            ],
+            "default": "none"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text columns",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
