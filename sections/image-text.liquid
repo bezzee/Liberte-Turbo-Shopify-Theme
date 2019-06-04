@@ -41,7 +41,7 @@
               <div class="featured-link--half">
                 <div class="info text-align--{{section.settings.frontpage_text_align}}">
                   <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="collection_title">
-                    {{ block.settings.title }}
+                    <h2>{{ block.settings.title }}</h2>
                   </a>
                   {% if block.settings.text != blank %}
                     <div class="description">{{ block.settings.text }}</div>

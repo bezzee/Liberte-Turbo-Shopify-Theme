@@ -10,9 +10,9 @@
   <div class="container title-wrapper">
     {% if section.settings.title != blank %}
       <div class="{% comment %}sixteen columns {% endcomment %}center">
-        <h2 class="title">
+        <h1 class="title">
           {{ section.settings.title }}
-        </h2>
+        </h1>
         <h3 class="title">{{ section.settings.subtitle }}</h3>
         {% comment %}<div class="feature_divider"></div>{% endcomment %}
       </div>
@@ -116,22 +116,30 @@
                       <div class="collection-details">
                         <span class="title">
                           {% if collection != blank %}
+                          <h4>
                             {{ collection.title }}
+                            </h4>
                           {% else %}
+                          <h4>
                             {{ "homepage.onboarding.collection_title" | t }}
+                            </h4>
                           {% endif %}
                         </span>
                       </div>
-                      <a href="{{ collection.url }}"><span class="view_all">{{ 'collections.general.view_all' | t }}</span></a>
+                      <a href="{{ collection.url }}"><span class="view_all"><h4>{{ 'collections.general.view_all' | t }}</h4></span></a>
                     </div>
                   </div>
                 {% endif %}
                 <a class="collection-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ collection.url }}" itemprop="url">
                   <span class="title">
                     {% if collection != blank %}
+                    <h4>
                       {{ collection.title }}
+                      </h4>
                     {% else %}
+                    <h4>
                       {{ "homepage.onboarding.collection_title" | t }}
+                      </h4>
                     {% endif %}
                   </span>
                 </a>

@@ -124,9 +124,9 @@
           </h1>
         {% endif %}
         {% if subtitle != blank %}
-          <div class="subtitle">
+          <h2 class="subtitle">
             {{ subtitle }}
-          </div>
+          </h2>
         {% endif %}
         {% if button1 != blank %}
           <a {% if button1_link != blank %}href="{{ button1_link }}"{% endif %} class="action_button first_button highlight-{{ button1_highlight }}">
@@ -153,5 +153,5 @@
       {% endif %}
     </div>
   {% endunless %}
-  
+
 </section>
