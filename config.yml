@@ -1,7 +1,17 @@
+# Live Store
+
+production:
+  password: b0c3a3486743493e3e8eb8698287aaea
+  theme_id: "32020856914"
+  store: liberte-ny.myshopify.com
+
+# Dev Store
+
 development:
   password: c47784ff7c20ff15e618cc07f43d9bde
   theme_id: "41463152728"
   store: liberte-dev.myshopify.com
+
 ignores_files:
   - .git
   - .DS_Store
