@@ -4104,7 +4104,7 @@
     "slideshow_subtitle_font_style": "none",
     "slideshow_subtitle_font_text": "normal",
     "slideshow_subtitle_size": 38,
-    "slideshow_subtitle_letter_spacing": 2,
+    "slideshow_subtitle_letter_spacing": 1,
     "slideshow_shadow": false,
     "regular_font": "Didot, serif",
     "regular_weight": "normal",
@@ -4180,7 +4180,7 @@
     "newsletter_popup_form": true,
     "display_name": true,
     "use_newsletter_border": false,
-    "newsletter_bg": "",
+    "newsletter_bg": "shopify:\/\/shop_images\/Luxury-Lingerie-for-Diverse-Sizes_c1229e13-62ad-4a14-992c-953df780f17e.jpg",
     "newsletter_popup_image_align": "left",
     "newsletter_logo": "",
     "newsletter_popup_title": "Be in the know!",
@@ -4210,7 +4210,7 @@
     "favicon": "shopify:\/\/shop_images\/LIBERTE_FINAL_LOGO_MASTER_52fa8038-2cad-4654-855f-bbd58cf7601f.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
-    "checkout_header_image": "",
+    "checkout_header_image": "shopify:\/\/shop_images\/Liberte_Blue_f44db60b-212c-4189-85e1-bda4965a42dd.jpeg",
     "checkout_logo_image": "shopify:\/\/shop_images\/LIBERTE_FINAL_LOGO_MASTER_52fa8038-2cad-4654-855f-bbd58cf7601f.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
@@ -4719,7 +4719,7 @@
           "logo_home": "",
           "logo_mobile": "",
           "main_linklist": "main-menu",
-          "main_linklist2": "",
+          "main_linklist2": "header-right",
           "vertical_menu": true,
           "search_enabled": true,
           "fixed_header": true,
@@ -4745,7 +4745,7 @@
           "1538582376141": {
             "type": "link_list",
             "settings": {
-              "menu": "",
+              "menu": "menu-2",
               "show_menu_title": false,
               "social_icons_footer": false
             }
@@ -4777,7 +4777,7 @@
         ],
         "settings": {
           "display_payment_methods": false,
-          "credits_linklist": "",
+          "credits_linklist": "footer-credits",
           "image": "",
           "text_align": "left"
         }
@@ -4983,7 +4983,7 @@
         "settings": {
           "display_style": "crop",
           "height": 63,
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Liberte-DD-Bras_1e7c92ff-b6bf-4be9-afa9-5ec56c5c3285.jpg",
           "pretext": "",
           "title": "Liberté, the freedom to just be",
           "heading_image": "",
@@ -5007,15 +5007,15 @@
           "1489285780844": {
             "type": "collection",
             "settings": {
-              "feature_collection": "",
-              "image": ""
+              "feature_collection": "test-collection",
+              "image": "shopify:\/\/shop_images\/Crosby_Lace_Lingerie.jpg"
             }
           },
           "1489285785375": {
             "type": "collection",
             "settings": {
-              "feature_collection": "",
-              "image": ""
+              "feature_collection": "nolita-collection",
+              "image": "shopify:\/\/shop_images\/Bowery_Lace_and_Mesh_Lingerie.jpg"
             }
           }
         },
@@ -5025,7 +5025,7 @@
         ],
         "settings": {
           "title": "DISCOVER LIBERTÉ",
-          "subtitle": "Lingerie designed and made in New York City, crafted with premium Italian fabrics and exceptional attention to detail",
+          "subtitle": "<p>Lingerie designed and made in New York City, crafted with premium Italian fabrics and exceptional attention to detail<\/p>",
           "frontpage_collections_per_row": 2,
           "button_text": "SHOP THE COLLECTION"
         }
@@ -5206,21 +5206,21 @@
           "1526483611372-1": {
             "type": "logo_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/newsweek2.png",
               "link": "http:\/\/www.newsweek.com\/finally-lingerie-fits-real-women-676112"
             }
           },
           "1526483611372-2": {
             "type": "logo_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/new_york_post.png",
               "link": "https:\/\/nypost.com\/2018\/02\/02\/this-model-couldnt-find-a-bra-she-liked-so-she-invented-one\/"
             }
           },
           "1526483611372-3": {
             "type": "logo_image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/glowup.png",
               "link": "https:\/\/theglowup.theroot.com\/liberte-egalite-lingerie-model-amber-tolliver-is-lev-1824187261"
             }
           }
@@ -5314,7 +5314,7 @@
               "image_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "",
+              "menu_1": "premiere-collection",
               "menu_1_link": "shopify:\/\/collections\/frontpage",
               "menu_2": "",
               "menu_2_link": "",
@@ -5386,7 +5386,7 @@
           "1536680875009": {
             "type": "quote",
             "settings": {
-              "quote_text": "In case you need to be reminded, love yourself first.",
+              "quote_text": "<p>In case you need to be reminded, love yourself first.<\/p>",
               "quote_tagline": ""
             }
           },
@@ -5419,7 +5419,7 @@
               "layout": false,
               "frontpage_text_align": "left",
               "frontpage_image_position": "right",
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Luxury-Lingerie-for-Diverse-Sizes_dbff9a87-e3ef-4289-8e28-6fcb028bc9a7.jpg",
               "title": "Liberté is making luxury lingerie for diverse bodies.",
               "text": "<p>Our founder, Amber Tolliver, started Libert&eacute; because she couldn&rsquo;t find lingerie in her size that made her feel confident. When she realized other women faced the same challenge, she set out to make a change. At Libert&eacute;, our goal is to is provide chic, supportive, and comfortable lingerie for the modern women, who is less concerned with conforming&mdash;and more interested in loving who she is. We are committed to inspiring confidence through our high-quality, beautifully-crafted collections. Our timeless designs use natural and tech fabrics to ensure breathability and comfort to provide women who wear niche sizes the lingerie they deserve (but rarely receive). Using Amber&rsquo;s background in the fashion industry as a foundation, &nbsp;Libert&eacute; was built with a deep understanding of the lingerie industry, what could be better and what needed to be overhauled.<\/p>",
               "link": "",
@@ -5436,7 +5436,7 @@
           "1539961963167": {
             "type": "page",
             "settings": {
-              "content_page": ""
+              "content_page": "what-makes-liberte-unique"
             }
           },
           "1549055893912": {
@@ -5475,7 +5475,7 @@
               "layout": false,
               "frontpage_text_align": "left",
               "frontpage_image_position": "left",
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Amber.jpg",
               "title": "Meet the founder",
               "text": "<p>A former fashion student, lingerie model, and frustrated 32E bra shopper, Amber Tolliver is the founder of Libert&eacute;, a luxury lingerie brand made for the modern woman. With an extensive 17 year career as a standard and plus-size model, Amber &nbsp;has worked for numerous lingerie brands and was also the face of Aerie&rsquo;s &ldquo;Real&rdquo; campaign in 2013. Garnering accolades for being a relatable inspiration to young women, her work as a model ultimately fueled her desire to create a brand that meet the needs of women who were ignored by the traditional American lingerie market. Most important to Amber &nbsp;is shifting the perspective of what is possible in bra manufacturing by providing size inclusive collections, in comfortable and beautiful styles women deserve. Raised just outside of Chicago and former student of Columbia College Chicago and FIT, Amber &nbsp;lives in New York City. In addition to running Libert&eacute;, she is actively involved with Girls Inc. of New York and is a dedicated plant mom.<\/p>",
               "link": "",
@@ -5510,7 +5510,7 @@
           "display_collection_title": true,
           "collection_title": "The Collection",
           "collection_text_description": "<p><em><strong>Lingerie that fits like it was made for you, because it was.<\/strong><\/em><\/p>\n<p>Libert&eacute; creates&nbsp;bras that are&nbsp;both beautiful and supportive in sizes 32C to 38H. Designed to adapt to your curves and comfortable enough for everyday wear, our lingerie&nbsp;is meant to help you feel your best. Libert&eacute; intimates are produced in NYC with lace, mesh, and jersey knits&nbsp;from Italy.<\/p>",
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Liberte-Luxury-Lingerie_d6c934a0-842c-4bad-b6ee-b9285f0d1933.jpg",
           "image_darken": false,
           "collection_style": "slider",
           "collection_description": true,
@@ -5637,7 +5637,7 @@
             "type": "text_block",
             "settings": {
               "enable_image": true,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Value_prop.png",
               "title": "Your bra should feel like it's made for you.",
               "heading_size": "regular_text",
               "text": "",
@@ -5681,7 +5681,7 @@
             "type": "text_block",
             "settings": {
               "enable_image": true,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Value_prop.png",
               "title": "Your bra should feel like it's made for you.",
               "heading_size": "regular_text",
               "text": "",
@@ -5773,7 +5773,7 @@
         "settings": {
           "display_style": "crop",
           "height": 100,
-          "image": "",
+          "image": "shopify:\/\/shop_images\/homepage_top_photo_final.jpg",
           "pretext": "",
           "title": "",
           "heading_image": "shopify:\/\/shop_images\/LIBERTE_FINAL_LOGO_MASTER_52fa8038-2cad-4654-855f-bbd58cf7601f.png",
@@ -5851,7 +5851,7 @@
             "settings": {
               "display_style": "crop",
               "height": 50,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Liberte_DD_Cup_Bras_13ab3da4-06f4-4645-b8ee-a41822ddcaf7.jpg",
               "pretext": "",
               "title": "Liberté",
               "subtitle": "<p><em><strong>Lingerie that fits like it was made for you<\/strong><\/em><\/p>",
@@ -5897,7 +5897,7 @@
             "type": "featured_collection",
             "settings": {
               "title": "",
-              "collection": "",
+              "collection": "bras",
               "collection_style": "grid",
               "products_per": 4,
               "products_limit": 8
@@ -5914,7 +5914,7 @@
             "type": "featured_collection",
             "settings": {
               "title": "Complete Your Set",
-              "collection": "",
+              "collection": "panties",
               "collection_style": "slider",
               "products_per": 4,
               "products_limit": 48
@@ -6132,7 +6132,7 @@
         ],
         "settings": {
           "show_banner": true,
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Liberte_Blue_f44db60b-212c-4189-85e1-bda4965a42dd.jpeg",
           "pretext": "",
           "title": "FAQs",
           "subtitle": "<p>Need Extra support? We're here to help.<\/p>",
@@ -6188,19 +6188,19 @@
       "contact-template": {
         "type": "contact-template",
         "blocks": {
-          "1559679969018": {
+          "1559682942468": {
             "type": "rich_text_and_image",
             "settings": {
               "image": "",
               "title": "Contact",
-              "content": "<p><span style=\"text-decoration: none;\">For all Libert&eacute; related questions please email us, or see our&nbsp;<a href=\"https:\/\/liberte-ny.myshopify.com\/admin\/pages\/www.liberte.co\/pages\/faqs\" title=\"https:\/\/liberte-ny.myshopify.com\/admin\/pages\/www.liberte.co\/pages\/faqs\">Frequently Asked Questions Page<\/a>.<\/span><\/p>",
+              "content": "<p><span style=\"text-decoration: none;\">For all Libert&eacute; related questions please email us, or see our <a href=\"\/pages\/faqs\" title=\"FAQs\">Frequently Asked Questions Page<\/a>.<\/span><\/p>",
               "text_size": "featured_text",
               "text_alignment": "center",
               "button_label": "",
               "button_link": ""
             }
           },
-          "1559680047051": {
+          "1559683069002": {
             "type": "image_with_text_overlay",
             "settings": {
               "display_style": "crop",
@@ -6208,7 +6208,7 @@
               "image": "shopify:\/\/shop_images\/overpasses-and-traffic.jpg",
               "pretext": "",
               "title": "",
-              "subtitle": "contactus@liberte.co<br> 447 Broadway, 2nd Fl #144<br>  New York, NY 10013",
+              "subtitle": "contactus@liberte.co<br>447 Broadway, 2nd Fl #144<br>New York, NY 10013",
               "caption_background": true,
               "caption_background_transparency": true,
               "text_position": "center",
@@ -6223,8 +6223,8 @@
           }
         },
         "block_order": [
-          "1559679969018",
-          "1559680047051"
+          "1559682942468",
+          "1559683069002"
         ],
         "settings": {}
       }

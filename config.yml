@@ -7,4 +7,4 @@ ignores_files:
   - .DS_Store
   - config.yml
   - README.md
-  - config/settings_data.json
+  # - config/settings_data.json

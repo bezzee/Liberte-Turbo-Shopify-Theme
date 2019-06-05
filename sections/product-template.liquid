@@ -7,14 +7,14 @@
 
 <div class="container main content">
   <div class="sixteen columns">
-    
+
     {% comment %}{% raw %}
       {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
     {% endraw %}{% endcomment %}
-    
+
     {% if section.settings.product_breadcrumb %}
       <div class="clearfix breadcrumb-collection">
-        
+
         {% comment %}
           {% if collection.previous_product or collection.next_product %}
             <div class="nav_arrows breadcrumb_text">
@@ -32,7 +32,7 @@
 
         {% if section.settings.product_breadcrumb %}
           <div class="breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
-            
+
             {% comment %}
               <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                 <a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link">
@@ -41,7 +41,7 @@
               </span>
               <span class="breadcrumb-divider">/</span>
             {% endcomment %}
-            
+
             <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
               {% if collection %}
                 <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item" class="breadcrumb_link">
@@ -54,15 +54,15 @@
                 {% else %}
                   <a href="/collections/all" title="{{ collections.all.title }}" class="breadcrumb_link"><span>{{ collections.all.title }}</span></a>
               {% endraw %}{% endcomment %}
-              
+
               {% endif %}
             </span>
-            
+
             {% comment %}
               <span class="breadcrumb-divider">/</span>
               {{ product.title }}
             {% endcomment %}
-            
+
           </div>
         {% endif %}
       </div>
@@ -125,7 +125,7 @@
           {% if settings.enable_shopify_product_badges and settings.enable_shopify_review_comments %}
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           {% endif %}
-          
+
           {% comment %}<div class="feature_divider"></div>{% endcomment %}
 
 
@@ -241,7 +241,7 @@
         <li><a href="#reviews-tab">Reviews</a></li>
       </ul>
       <ul class="tabs-content">
-        
+
         <li class="active container" id="product-details-tab">
           {% comment %}{% raw %}{% if section.settings.product_description_position == "bottom" %}{% endraw %}{% endcomment %}
             {% if product.description != blank %}
@@ -263,7 +263,9 @@
         <li id="size-guide-tab">
           {% include "size-guide" %}
         </li>
-        <li id="reviews-tab container"></li>
+        <li id="reviews-tab container">
+          {% include "product-reviews" %}
+        </li>
       </ul>
   <!-- Abe:  re-opening tags -->
 <div class="container main content">
@@ -278,9 +280,9 @@
           data-free-text="{{ settings.free_price_text }}"
           >
   <!-- end re-opening tags -->
-  
-  
-  
+
+
+
       {% if settings.enable_shopify_review_comments and settings.review_position == "below_gallery" %}
         <div class="shopify-reviews">
           <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
@@ -318,7 +320,7 @@
 
 {% comment %}
   Abraham - removed this option because with the addition of tabs, it is not relevant
-  
+
     {
       "type": "radio",
       "id": "product_description_position",
