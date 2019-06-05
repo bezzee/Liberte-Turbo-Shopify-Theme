@@ -51,7 +51,7 @@ Description: Shopify Theme (https://www.shopify.com/?ref=out-of-the-sandbox)
   #Font-Face
   #Custom Styles */
 
-@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css');
+@import url('fontawesome.css');
 
 /* #Mixins
 ================================================== */
@@ -575,7 +575,7 @@ h3, .h3 {
     color: {{ settings.headline_color }};
   }
   &.title {
-    line-height: 1.6;
+    line-height: 1.25;
     margin: 0 auto 15px;
     clear:both;
     padding-top: 4px;
@@ -10539,7 +10539,7 @@ $delay: 0;
       padding-right: 100px;
     }
 
-    h1 {
+    h2 {
       @include headline-style($font-size-header);
       font-weight: bold;
       margin: 0 0 20px;
@@ -10875,7 +10875,7 @@ $delay: 0;
     }*/
 
 /* Inside Title too small on smaller viewport patch */
-    h1, h2, h3, h4, h5, h6, .collection_title, .empty_cart, .js-product-title{
+    h1, h2, h3, h4, h5, h6, .collection_title, .empty_cart {
         font-size:28px;
     }
 
