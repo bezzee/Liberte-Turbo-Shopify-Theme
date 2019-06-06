@@ -10,13 +10,18 @@
     <meta http-equiv="cleartype" content="on">
     <meta name="robots" content="index,follow">
 
+    {% comment %}
     <!-- Custom Fonts -->
     {% if settings.logo_font contains 'Google' or settings.headline_font contains 'Google' or settings.nav_font contains 'Google' or settings.slideshow_subtitle_font contains 'Google' or settings.slideshow_headline_font contains 'Google' or settings.regular_font contains 'Google' %}
       <link href="//fonts.googleapis.com/css?family=.|{% if settings.logo_font contains 'Google' %}{{ settings.logo_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.headline_font contains 'Google' %}{{ settings.headline_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.nav_font contains 'Google' %}{{ settings.nav_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.slideshow_headline_font contains 'Google' %}{{ settings.slideshow_headline_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.slideshow_subtitle_font contains 'Google' %}{{ settings.slideshow_subtitle_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold|{% endif %}{% if settings.regular_font contains 'Google' %}{{ settings.regular_font | replace: 'Google_', '' | replace: "'", "" }}:light,normal,bold{% endif %}" rel="stylesheet" type="text/css" />
     {% endif %}
+    {% endcomment %}
 
     <!-- Stylesheets for Turbo 3.0.4 -->
     {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
+    <!-- Brandon Grotesque font -->
+    <link rel='stylesheet' href='https://use.typekit.net/fhw7dfg.css'>
 
 
     {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}
@@ -43,9 +48,6 @@
     {% endif %}
     <link rel="canonical" href="{{ canonical_url }}" />
 
-    <!-- Brandon Grotesque font -->
-    <link rel='stylesheet' href='https://use.typekit.net/fhw7dfg.css'>
-
     {% if template contains 'customer' %}
       {{ "shopify_common.js" | shopify_asset_url | script_tag }}
       {{ "customer_area.js" | shopify_asset_url | script_tag }}
@@ -57,11 +59,14 @@
     <script src="https://www.googletagmanager.com/gtag/js?id=AW-801237009" async></script>
     <script src="{{ 'gtags.js' | asset_url }}" async></script>
 
-<!-- Jquery & Lazysizes -->
+<!-- Jquery, Lazysizes, & Theme JS -->
 
     <script src="{{ 'jquery.min.js' | asset_url }}" async></script>
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
     <script src="{{ 'app.js' | asset_url }}" async></script>
+    <!-- Start of libertehelp Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0" async> </script>
+    <!-- End of libertehelp Zendesk Widget script -->
 
     {% if settings.show_multiple_currencies %}
       {% include 'currencies' %}
@@ -101,6 +106,7 @@
       </script>
     {% endunless %}
   </head>
+
   {% if template contains "index" %}
   {% assign feature_image = true %}
   {% elsif template contains "collection" %}
