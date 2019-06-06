@@ -3987,7 +3987,7 @@
   "current": {
     "performance": "ludicrous",
     "image_loading_style": "appear",
-    "custom_scripts": "<!-- Start of libertehelp Zendesk Widget script -->\n<script id=\"ze-snippet\" src=\"https:\/\/static.zdassets.com\/ekr\/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0\"> <\/script>\n<!-- End of libertehelp Zendesk Widget script -->",
+    "custom_scripts": "",
     "logo_color": "#ffffff",
     "regular_color": "#333333",
     "banner_color": "#ffffff",

@@ -56,16 +56,15 @@
     {% if template contains 'product' or template contains 'collection' or template contains 'index' or template contains 'search' %}
     <!-- Global site tag (gtag.js) - AdWords: 801237009 -->
     <script src="https://www.googletagmanager.com/gtag/js?id=AW-801237009" async></script>
-    <script src="{{ 'gtags.js' | asset_url }}" async></script>
+    <script src="{{ 'gtags.js' | asset_url }}" defer></script>
 
     <!-- Jquery, Lazysizes, & Theme JS -->
 
     <script src="{{ 'jquery.min.js' | asset_url }}" async></script>
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
-    <script src="{{ 'app.js' | asset_url }}" async></script>
+    <script src="{{ 'app.js' | asset_url }}" defer></script>
     <!-- Start of libertehelp Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0" async> </script>
-    <!-- End of libertehelp Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0"> </script><!-- End of libertehelp Zendesk Widget script -->
 
     {% if settings.show_multiple_currencies %}
       {% include 'currencies' %}
@@ -75,7 +74,7 @@
     {% endif %}
 
     {% unless settings.performance == "sport" or template contains "customer" %}
-      <script src="{{ 'instantclick.min.js' | asset_url }}" data-no-instant></script>
+      <script src="{{ 'instantclick.min.js' | asset_url }}" data-no-instant async></script>
     {% endunless %}
   </head>
 
@@ -168,9 +167,7 @@
   {% endif %}
   {% endif %}
 
-    {% comment %}<script>{% endcomment %}
-      {{ settings.custom_scripts }}
-    {% comment %}</script>{% endcomment %}
+  {{ settings.custom_scripts }}
   </body>
 </html>
 {% endcapture %}
