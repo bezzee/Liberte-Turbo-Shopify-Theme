@@ -2,15 +2,15 @@
   <div class="popup-signup-show--{{settings.newsletter_popup_form }} clearfix">
     <span class="message"></span>
     {% if settings.mailchimp_link != blank %}
-      <form action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" id="contact_form" target="_blank">
-        
+      <form action="{{ settings.klaviyo_link }}" method="post" name="klaviyo-embedded-subscribe-form" id="contact_form" target="_blank">
+
         {% comment %}
           {% if settings.display_first_name %}
             <input
-              type="text" 
+              type="text"
               value=""
-              class="firstName" 
-              name="FNAME" 
+              class="firstName"
+              name="FNAME"
               placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}"
             >
           {% endif %}
@@ -18,11 +18,11 @@
             <input type="text" value="" name="LNAME" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}">
           {% endif %}
         {% endcomment %}
-        
+
         {% if settings.display_name %}
           <input type="text" class="fullName" placeholder="{{ 'general.newsletter_form.subscriber_full_name' | t }}">
         {% endif %}
-        
+
         <input type="email" value="" name="EMAIL" class="contact_email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
         <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" class="action_button sign_up" name="subscribe" />
       </form>
@@ -37,7 +37,7 @@
          {% endif %}
 
          <input type="hidden" name="contact[tags]" value="prospect,newsletter"/>
-    
+
          {% comment %}
            {% if settings.display_first_name %}
              <input type="text" class="firstName" name="contact[first_name]" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}" />
@@ -46,7 +46,7 @@
              <input type="text" name="contact[last_name]" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}" />
            {% endif %}
          {% endcomment %}
-    
+
          {% if settings.display_name %}
            <input type="text" class="fullName" placeholder="{{ 'general.newsletter_form.subscriber_full_name' | t }}">
          {% endif %}

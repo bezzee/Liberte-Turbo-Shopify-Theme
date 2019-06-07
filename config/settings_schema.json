@@ -4441,9 +4441,9 @@
     "settings": [
       {
         "type": "text",
-        "id": "mailchimp_link",
-        "label": "MailChimp form action URL",
-        "info": "[Find your MailChimp form action URL](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006912487-Setting-Up-MailChimp-Turbo-)"
+        "id": "klaviyo_link",
+        "label": "Klaviyo form action URL",
+        "info": "[Find your Klaviyo form action URL](https:\/\/help.klaviyo.com\/hc\/en-us\/articles\/115005080167-Redirect-Existing-Signup-Forms-to-Klaviyo#redirecting-a-custom-form-to-klaviyo2)"
       },
       {
         "type": "checkbox",

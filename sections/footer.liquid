@@ -6,7 +6,7 @@
 
 <footer class="footer">
   <div class="container footer-menu-wrap">
-    
+
     {% if section.settings.image %}
       <div class="text-align--{{section.settings.text_align}}">
         {% if section.settings.image %}
@@ -28,16 +28,16 @@
         {% endif %}
       </div>
     {% endif %}
-    	
+
       {% assign has_wider_section = false %}
       {% for block in section.blocks %}
     	{% if block.type == 'newsletter' %}
           {% assign has_wider_section = true %}
     	{% endif %}
       {% endfor %}
-    
+
       {% for block in section.blocks %}
-        
+
     	{% capture social_icons_content %}
           {% if block.settings.social_icons_footer %}
             {% assign social_icons = true %}
@@ -46,7 +46,7 @@
             </div>
           {% endif %}
         {% endcapture %}
-    	
+
         <div class="
             {% if forloop.length >= 5 %} three columns
             {% elsif forloop.length == 4 %}
@@ -96,8 +96,8 @@
 
             <div class="newsletter">
               <span class="message"></span>
-              {% if settings.mailchimp_link != blank %}
-                <form action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" id="contact_form" target="_blank">
+              {% if settings.klaviyo_link != blank %}
+                <form action="{{ settings.klaviyo_link }}" method="post" name="klaviyo-embedded-subscribe-form" id="contact_form" target="_blank">
                   {% if block.settings.show_firstname %}
                     <input type="text" value="" class="firstName" name="FNAME" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}">
                   {% endif %}
@@ -131,11 +131,11 @@
                 {% endform %}
               {% endif %}
             </div>
-            
+
             {% if block.settings.show_social %}
               {% include 'social-icons' %}
             {% endif %}
-            
+
           </div>
           {{ social_icons_content }}
 
@@ -225,9 +225,9 @@
           </div>
         {% endif %}
       {% endfor %}
-		
+
       <div class="sixteen columns row footer_credits">
-        
+
         <ul class="credits">
           {% for link in linklists[section.settings.credits_linklist].links %}
             <li><a href="{{ link.url }}">{{ link.title }}</a></li>

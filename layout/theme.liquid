@@ -62,9 +62,9 @@
 
     <script src="{{ 'jquery.min.js' | asset_url }}" async></script>
     <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
-    <script src="{{ 'app.js' | asset_url }}" defer></script>
-    <!-- Start of libertehelp Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0"> </script><!-- End of libertehelp Zendesk Widget script -->
+    <script src="{{ 'app.js' | asset_url }}" async></script>
+    <!-- Zendesk Widget -->
+    <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0" defer> </script>
 
     {% if settings.show_multiple_currencies %}
       {% include 'currencies' %}
@@ -168,6 +168,8 @@
   {% endif %}
 
   {{ settings.custom_scripts }}
+  <!-- Klaviyo Integration -->
+  <script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js" defer></script>
   </body>
 </html>
 {% endcapture %}
