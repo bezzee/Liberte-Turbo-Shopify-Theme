@@ -57,12 +57,13 @@
     <!-- Global site tag (gtag.js) - AdWords: 801237009 -->
     <script src="https://www.googletagmanager.com/gtag/js?id=AW-801237009" async></script>
     <script src="{{ 'gtags.js' | asset_url }}" defer></script>
-
+    {% endif %}
     <!-- Jquery, Lazysizes, & Theme JS -->
 
-    <script src="{{ 'jquery.min.js' | asset_url }}" async></script>
-    <script src="{{ 'lazysizes.js' | asset_url }}" async></script>
-    <script src="{{ 'app.js' | asset_url }}" async></script>
+    {{ 'jquery.min.js' | asset_url | script_tag }}
+    {{ 'lazysizes.js' | asset_url | script_tag }}
+    {{ 'app.js' | asset_url | script_tag }}
+
     <!-- Zendesk Widget -->
     <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0" defer> </script>
 
@@ -164,7 +165,6 @@
     {% if template contains "blog" or template contains "article" or template contains "index" %}
       <script id="dsq-count-scr" src="//{{ settings.disqus_shortname }}.disqus.com/count.js" async></script>
     {% endif %}
-  {% endif %}
   {% endif %}
 
   {{ settings.custom_scripts }}
