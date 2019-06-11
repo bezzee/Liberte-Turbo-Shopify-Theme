@@ -543,14 +543,26 @@
       {
         "type": "color",
         "id": "modal_background_color",
-        "label": "Background",
+        "label": "Modal Background",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "modal_text_color",
-        "label": "Regular text",
+        "label": "Modal Regular text",
         "default": "#2b2e38"
+      },
+      {
+        "type": "color",
+        "id": "quick_shop_bg_color",
+        "label": "Hover Button Background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "quick_shop_text_color",
+        "label": "Hover Button Regular text",
+        "default": "#000000"
       },
       {
         "type": "header",

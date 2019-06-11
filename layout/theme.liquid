@@ -64,8 +64,9 @@
     {{ 'lazysizes.js' | asset_url | script_tag }}
     {{ 'app.js' | asset_url | script_tag }}
 
-    <!-- Zendesk Widget -->
+  {% unless template contains 'index' %}
     <script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=6766492d-2653-4748-900b-667ec460eef0" defer> </script>
+  {% endunless %}
 
     {% if settings.show_multiple_currencies %}
       {% include 'currencies' %}

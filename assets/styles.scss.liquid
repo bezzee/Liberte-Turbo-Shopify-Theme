@@ -5208,11 +5208,11 @@ a.tag {
 
 /* Thumbnail overlay */
 
-{% assign quick_shop_hover_bg = settings.product_hover_bg_color | color_extract: 'alpha' %}
+{% assign quick_shop_hover_bg = settings.quick_shop_bg_color | color_extract: 'alpha' %}
 
-{% assign quick_shop_bg_color = settings.product_hover_text_color %}
+{% assign quick_shop_bg_color = settings.quick_shop_bg_color %}
 
-{% assign quick_shop_text_color = settings.product_hover_bg_color | color_to_hex %}
+{% assign quick_shop_text_color = settings.quick_shop_text_color | color_to_hex %}
 
 .quick_shop,
 .view_all {
@@ -5224,7 +5224,7 @@ a.tag {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border: 1px solid {{ quick_shop_text_color }};
+  // border: 1px solid {{ quick_shop_text_color }};
   padding: 10px 20px;
   margin-top: 2rem;
   color: {{ quick_shop_text_color }};
