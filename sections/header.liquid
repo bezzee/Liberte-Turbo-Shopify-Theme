@@ -5,7 +5,7 @@
 
 {% comment %}Mobile navigation{% endcomment %}
 <header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
-  
+
   {% if section.settings.search_enabled or section.settings.show_cart %}
     <div class="top_bar clearfix">
       <a class="mobile_nav dropdown_link" data-dropdown-rel="menu" data-no-instant="true">
@@ -38,7 +38,7 @@
       {% endif %}
     </div>
   {% endif %}
-  
+
   {% if section.settings.search_enabled %}
     <div class="dropdown_container center" data-dropdown="search">
       <div class="dropdown">
@@ -52,15 +52,15 @@
       </div>
     </div>
   {% endif %}
-  
-  
+
+
   {% if section.settings.promo_text != blank %}
     <div class="promo_banner">
       {{ section.settings.promo_text }}
       <div class="promo_banner-close"></div>
     </div>
   {% endif %}
-  
+
   <div class="dropdown_container" data-dropdown="menu">
     <div class="dropdown">
       <ul class="menu" id="mobile_menu">
@@ -93,7 +93,7 @@
       </ul>
     </div>
   </div>
-  
+
 </header>
 
 {% if template contains "index" %}
@@ -115,7 +115,7 @@
 {% comment %}Main navigation{% endcomment %}
 <header class="{% if feature_image %}feature_image{% endif %} {% if section.settings.logo_home != nil %}secondary_logo--true{% endif %}">
   <div class="header {% if feature_image and settings.header_background == false %}is-absolute {% endif %} header-fixed--{{ section.settings.fixed_header }} {% if settings.header_background %}header-background--solid{% endif %}">
-    
+
     {% comment %}
       {% if
           section.settings.social_icons_header
@@ -222,7 +222,7 @@
           <div class="nav">
             <ul class="menu {% if section.settings.menu_alignment == 'align_left' %}align_right{% elsif section.settings.menu_alignment == 'align_right' %}align_left{% else %}{{ section.settings.menu_alignment }}{% endif %} clearfix">
               {{ menu_right }}
-              
+
               {% if section.settings.show_cart %}
                 <li class="cart_container">
                   <a href="/cart" class="{{ section.settings.cart_icon }} mini_cart dropdown_link" data-no-instant>
@@ -238,14 +238,14 @@
                           {{ 'cart.general.continue_shopping_link_html' | t }}
                         </a>
                         <ul class="cart_items js-cart_items clearfix">
-                          
+
                           {% comment %}Abraham, 8/17/18: Moved the cart to client-side rendering only{% endcomment %}
-                          
+
                           {% comment %}BEGIN NEW CSR CART ITEM TEMPLATE{% endcomment %}
-                          
+
 
                           <li class="cart_item clearfix cart_item_template" hidden>
-                            
+
                             <a class="left cart_image item_link">
                               <img>
                             </a>
@@ -253,7 +253,7 @@
                             <a class="remove_from_cart" href="#">
                                 <span class="fas fa-trash-alt"></span>
                             </a>
-                            
+
                             <a class="item_link">
                               <span class="item_title"></span>
                               <div class="line-item">
@@ -263,7 +263,7 @@
                             </a>
                             {% unless item.product.has_only_default_variant or item.variant.title contains "Title" %}
                               <p class="item_variant_text">
-                                Size: 
+                                Size:
                                 {% for option in item.product.options %}
                                   {% assign downcased_option = option | downcase %}
                                   <span class="option option_{% unless downcased_option contains "size" %}non_{% endunless %}size">
@@ -279,10 +279,10 @@
                                   <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
                                 {% endcomment %}
                                 <input
-                                  type="number" 
-                                  min="0" 
-                                  size="2" 
-                                  class="quantity" 
+                                  type="number"
+                                  min="0"
+                                  size="2"
+                                  class="quantity"
                                   name="updates[]"
                                 >
                                 {% comment %}
@@ -299,11 +299,11 @@
                               </strong>
                             </div>
                           </li>
-                          
+
                           {% comment %}END NEW CSR CART ITEM TEMPLATE{% endcomment %}
-                          
+
                           {% comment %}BEGIN OLD SSR CART ITEMS{% endcomment %}
-                          
+
                           {% comment %}
                             {% assign total_saving = 0 %}
                             {% for item in cart.items %}
@@ -332,7 +332,7 @@
                                 </a>
                                 {% unless item.product.has_only_default_variant or item.variant.title contains "Title" %}
                                   <p>
-                                    Size: 
+                                    Size:
                                     {% for option in item.product.options %}
                                       {% assign downcased_option = option | downcase %}
                                       <span class="option option_{% unless downcased_option contains "size" %}non_{% endunless %}size">
@@ -348,13 +348,13 @@
                                       <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
                                     {% endcomment %}
                                     <input
-                                      type="number" 
-                                      min="0" 
-                                      size="2" 
-                                      class="quantity" 
-                                      name="updates[]" 
-                                      id="updates_{{ item.id }}" 
-                                      value="{{ item.quantity }}" 
+                                      type="number"
+                                      min="0"
+                                      size="2"
+                                      class="quantity"
+                                      name="updates[]"
+                                      id="updates_{{ item.id }}"
+                                      value="{{ item.quantity }}"
                                       data-line-id="{{ forloop.index }}"
                                     >
                                     {% comment %}
@@ -373,9 +373,9 @@
                               </li>
                             {% endfor %}
                           {% endcomment %}
-                          
+
                           {% comment %}END OLD SSR CART ITEMS{% endcomment %}
-                          
+
                         </ul>
                         <hr />
                         <ul>
@@ -429,7 +429,7 @@
                   {% endunless %}
                 </li>
               {% endif %}
-              
+
             </ul>
           </div>
         {% endif %}
@@ -450,14 +450,14 @@
         {% include 'sub-menu' with section.settings.main_linklist2 %}
       </div>
     </div>
-    
+
     {% if section.settings.promo_text != blank %}
-      <div class="promo_banner">
+      <div id="promo-banner" class="promo_banner">
         {{ section.settings.promo_text }}
-        <div class="promo_banner-close"></div>
+        <!-- <div class="promo_banner-close"></div> -->
       </div>
     {% endif %}
-    
+
   </div>
 </header>
 

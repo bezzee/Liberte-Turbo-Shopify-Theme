@@ -6510,8 +6510,15 @@ $promoBannerHeight: 30px;
   }
 }
 
+.promo_banner-scroll .promo_banner {
+  height: 0 !important;
+  line-height: 0 !important;
+}
+
+.promo_banner {
+  transition: all 0.2s linear;
+}
 .promo_banner-show .promo_banner {
-  transition: all 0s linear;
   height: $promoBannerHeight;
   line-height: $promoBannerHeight;
 }
@@ -10893,4 +10900,4 @@ $delay: 0;
 }*/
 
 // Jake K. moved from theme.liquid head
-.product_section .product_form{opacity:1}.multi_select,form .select{display:block!important}
+// .product_section .product_form{opacity:1}.multi_select,form .select{display:block!important}
