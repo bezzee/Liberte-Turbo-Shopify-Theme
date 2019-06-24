@@ -1250,37 +1250,38 @@ body.is-active {
 
 .main_nav,
 .dropdown {
-  //@include background-opacity({{ settings.header_bg_color }}, {% if settings.transparent_header %}0.8{% else %}1{% endif %});
+  @include background-opacity({{ settings.header_bg_color }}, {% if settings.transparent_header %}0.8{% else %}1{% endif %});
   clear: both;
   transition: all 0.3s linear;
   animation: fadeIn 0.3s linear none;
 }
 
-@mixin inverse-header {
+/*@mixin inverse-header {
   .menu > li > a {
     &, & > span {
       color: {{ settings.logo_color }};
     }
   }
-}
-
-/*body:not(.index) .main_nav {
-  @include background-opacity(#FFF, {% if settings.transparent_header %}0.9{% else %}1{% endif %});
-  @include inverse-header();
 }*/
+
+body:not(.index) .main_nav {
+  @include background-opacity(#FFF, {% if settings.transparent_header %}0.9{% else %}1{% endif %});
+  //@include inverse-header();
+}
 
 .main_nav * {
  transition: all .3s linear;
 }
 
 .main_nav {
-  /* border-bottom: solid 2px rgba(255, 255, 255, 0.8); /*{{ settings.header_bg_color }}; */
+  border-bottom: solid 2px rgba(255, 255, 255, 0.8); 
+  {% comment %} {{ settings.header_bg_color }}; {% endcomment %}
   position: relative;
 }
 
 .header .main_nav {
   @include background-opacity({{ settings.header_bg_color }}, .9);
-  /*@include inverse-header(); */
+  // @include inverse-header();
 }
 
 {% if settings.header_background == false %}
@@ -1360,9 +1361,9 @@ body.is-active {
 .menu a:visited,
 .menu a:active,
 #header span.menu_title,
-//.menu a span, // Commented this out for the mini-cart
-select.currencies/*,
-.mini_cart span*/ {
+.menu a span, // Commented this out for the mini-cart
+select.currencies,
+.mini_cart span {
   font-family: {{ settings.nav_font | replace: 'Google_', '' | replace: '+', ' ' }};
   font-weight: {{ settings.nav_weight }};
   font-size: {{ settings.nav_font_size }}px;
@@ -10492,8 +10493,9 @@ $delay: 0;
 
 /* #Custom Styles
 ================================================== */
-.main_nav {
-  @include flexbox();
+// Jake Kaminski 6/20/19 - Flexbox breaks megamenu stacking
+/*.main_nav {
+  // @include flexbox();
   @include align-items(center);
   .nav ~ .nav {
     @include flexbox();
@@ -10508,7 +10510,7 @@ $delay: 0;
       }
     }
   }
-}
+}*/
 
 /* Allow setting background colors on "image-with-text" sections, and let the background color show around the content */
 .block__image_with_text {

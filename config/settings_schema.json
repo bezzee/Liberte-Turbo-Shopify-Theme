@@ -3916,6 +3916,11 @@
     "name": "Mega menus",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "mega_menu",
+        "label": "Enable Turbo Mega Menu"
+      },
+      {
         "type": "paragraph",
         "content": "Select the number of custom mega menus to enable ([?](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008690607))"
       },

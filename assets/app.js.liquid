@@ -1543,6 +1543,7 @@ var header = {
         $('.active_link:not(.cart_container)').removeClass('active_link');
       }
 
+      // Remove active links + hide mega-menu
       $(".nav a, .logo a").not(".cart_content a").on("mouseenter", function() {
         if(!$(this).hasClass("active_link")) {
           $('.dropdown_container').hide();
@@ -1752,11 +1753,12 @@ var header = {
     });
   },
   unload: function() {
-    $('body').off("click", '.mobile_nav');
+    $('body').off('click', '.mobile_nav');
     $('body').off('click', '.dropdown_link');
     $('html').off('click');
     $('.mini_cart').off('click');
     $('.cart_content__continue-shopping').off('click');
+    $('body').off('click', '.banner a[href^="#"]');
   }
 }
 
