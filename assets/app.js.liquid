@@ -1342,7 +1342,7 @@ var header = {
     const $headerContainer = $('#shopify-section-header').addClass('initialized');
     if ($('body').hasClass('index')) {
       // On the home page, insert the header immediately AFTER the last consecutive video or image overlay section
-      $headerContainer.remove();
+      $headerContainer.detach();
       const $indexSections = $('.index-sections');
       for (
         var $insertBefore = $('> :eq(0)', $indexSections);
@@ -1372,6 +1372,23 @@ var header = {
         });
       }
     }
+
+    // Jake Kaminski announcement bar hide on scroll
+
+    $(function() {
+
+    //caches a jQuery object containing the header element
+    var header = $("body");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll > 500) {
+            header.removeClass("promo_banner-show");
+        } else {
+            header.addClass("promo_banner-show");
+        }
+    });
+  });
 
     //offscreen check for menu
     $('.vertical-menu_submenu, .vertical-menu_sub-submenu').each(function() {
@@ -1479,14 +1496,14 @@ var header = {
 
       //if (is_touch_device() || $(window).width() <= 798) {
         e.preventDefault();
-      //}
+    //}
     });
 
     $('.cart_content__continue-shopping').on('click', function(e){
       header.closeMiniCart();
     });
 
-    if (true /*$(window).width() <= 798*/) {
+    if ($(window).width() <= 798) {
 
       $('.dropdown_link').attr('data-no-instant', true);
 
@@ -1534,6 +1551,7 @@ var header = {
       });
 
     } else {
+    
 
       /**
        * Remove the "active_link" class from whatever element currently has that class,
@@ -1644,7 +1662,77 @@ var header = {
 
     }
 
-  },
+  }, {%comment%}
+      function removeActiveLink () {
+        $('.active_link:not(.cart_container)').removeClass('active_link');
+      }
+      
+      $(".nav a, .logo a").not(".cart_content a").on("mouseenter", function() {
+        if(!$(this).hasClass("active_link")) {
+          $('.dropdown_container').hide();
+          removeActiveLink();
+          $('.is-absolute').parent().addClass('feature_image');
+        }
+      });
+
+      $(".main_nav, .top_bar, .cart_container").on("mouseleave", function() {
+        if ( $(window).width() > 798) {
+        debugger
+          $('.dropdown_container').hide();
+        }
+        removeActiveLink();
+        //$('.is-absolute').parent().addClass('feature_image');
+      });
+
+      $('.dropdown_link, .dropdown_link--vertical').attr('data-click-count', 0);
+
+      $('.dropdown_link').on('mouseover touchstart', function(e) {
+        if ( $(window).width() > 798) {
+          $('.dropdown_container').hide();
+        }
+
+        var $dropdown = $(this).parents('.main_nav').find('[data-dropdown="' + $(this).data('dropdown-rel') + '"]');
+        var clickCount = $(this).attr('data-click-count');
+
+        removeActiveLink();
+
+        if(!$(this).hasClass('active_link')) {
+          $dropdown.show();
+
+          if($(this).hasClass('mini_cart')) {
+            $(this).parent('.cart_container').addClass('active_link');
+          } else {
+            if ( $(window).width() > 798) {
+              $(this).addClass('active_link');
+            }
+            $('.is-absolute').parent().removeClass('feature_image');
+          }
+        }
+
+        //Enable touch on parent link if on touch device and desktop menu is visible
+        if(is_touch_device()){
+          $('.dropdown_link').not(this).attr('data-click-count', 0);
+          $('.dropdown_link').attr('data-no-instant', true);
+
+
+          //capture touch event
+          if (e.type == 'touchstart'){
+            clickCount++;
+            $(this).attr('data-click-count', clickCount);
+
+            if (clickCount < 2){
+              e.preventDefault();
+              e.stopPropagation();
+              return false;
+            }
+          }
+        }
+
+      });
+
+    }
+
+  },{%endcomment%}
   removeDataAttributes: function(target){
     if($(target).length){
       var i,
@@ -1667,15 +1755,15 @@ var header = {
   loadMegaMenu: function(){
 
     //Remove old mega-menus so that theme-editor works properly
-    $('.sticky_nav .mega-menu').remove();
+    $('.main_nav_wrapper .mega-menu').remove();
     $('.header .mega-menu').remove();
 
     //Clone the mega menu from section into sticky_nav
     $('.mega-menu-container .mega-menu')
       .clone()
-      .appendTo('.sticky_nav .main_nav');
+     .appendTo('.main_nav_wrapper .main_nav');
     //Remove theme-editor data-attributes
-    header.removeDataAttributes('.sticky_nav .mega-menu.dropdown_container .dropdown_column');
+    header.removeDataAttributes('.main_nav_wrapper .mega-menu .dropdown_container .dropdown_column');
 
     //Loop through mega-menus to add arrow to parent
     $('.mega-menu-container .mega-menu').each(function(index){
@@ -1709,12 +1797,11 @@ var header = {
       })
     }
 
-    $('.mega-menu-parent').on('mouseenter', function() {
+   $('.mega-menu-parent').on('mouseenter', function() {
 
       if(!$(this).hasClass('active_link')) {
         $('.dropdown_container').hide();
         $(this).parents('.main_nav').find('[data-dropdown="' + $(this).data('dropdown-rel') + '"]').toggle();
-
         $(this).addClass('active_link');
         $('.is-absolute').parent().removeClass('feature_image');
 
@@ -4064,20 +4151,3 @@ $(document)
 $('.os-mask-and-zoom').waypoint(function (direction) {
   $(this.element).toggleClass('-in-view', direction == 'down');
 }, { offset: '90%' });
-
-// Jake Kaminski announcement bar hide on scroll
-
-$(function() {
-
-    //caches a jQuery object containing the header element
-    var header = $("body");
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-
-        if (scroll > 500) {
-            header.removeClass("promo_banner-show");
-        } else {
-            header.addClass("promo_banner-show");
-        }
-    });
-});

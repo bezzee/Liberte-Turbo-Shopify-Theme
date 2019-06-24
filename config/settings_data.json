@@ -4721,7 +4721,7 @@
           "logo_mobile": "",
           "main_linklist": "main-menu",
           "main_linklist2": "header-right",
-          "vertical_menu": true,
+          "vertical_menu": false,
           "search_enabled": true,
           "fixed_header": true,
           "logo_position": "left",
